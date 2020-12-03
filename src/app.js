@@ -5,6 +5,7 @@ const geoCode = require("./utils/geoCode");
 const getWeather = require("./utils/getWeather");
 //app express
 const app = express();
+const port = process.env.PORT || 3000;
 //define paths for express config
 const staticDirectoryPath = path.join(__dirname, "../public");
 const newViews = path.join(__dirname, "../templates/views");
@@ -63,6 +64,6 @@ app.get("*", (req, res) => {
 //
 //-------listener
 //
-app.listen(3000, () => {
-  console.log("server is up port 3000");
+app.listen(port, () => {
+  console.log("server is up port " + port);
 });
